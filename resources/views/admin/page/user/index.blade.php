@@ -28,52 +28,47 @@
           <div class="card ">
             <div class="card-header pb-0 p-3">
               <div class="d-flex justify-content-between">
-                <h6 class="mb-2">About</h6>
+                <h6 class="mb-2">User</h6>
               </div>
-              <a href="" type="button" class="btn btn-success">Tambah</a>
-
             </div>
             <div class="table-responsive">
               <table class="table align-items-center ">
                 <tbody>
-               @foreach ($data as $item)
+                @foreach ($data as $item)
                 <tr>
                   <td class="w-30">
                     <div class="d-flex px-2 py-1 align-items-center">
                       <div>
-                        <img src="{{$item->image}}" >
+                        <img src="{{$item->image}}" alt="Country flag" style="width:40px; height:40px;">
                       </div>
                       <div class="ms-4">
-                        <p class="text-xs font-weight-bold mb-0">Title</p>
-                        <h6 class="text-sm mb-0">{{$item->title}}</h6>
+                        <p class="text-xs font-weight-bold mb-0">Name</p>
+                        <h6 class="text-sm mb-0">{{$item->name}}</h6>
                       </div>
                     </div>
                   </td>
                   <td>
                     <div class="text-center">
-                      <p class="text-xs font-weight-bold mb-0">Content_1</p>
-                      <h6 class="text-sm mb-0">
-                        {!! Str::limit($item->content_1, 50 ,'...') !!}
-
-                      </h6>
+                      <p class="text-xs font-weight-bold mb-0">Role</p>
+                      <h6 class="text-sm mb-0">{{$item->role}}</h6>
                     </div>
                   </td>
                   <td>
                     <div class="text-center">
-                      <p class="text-xs font-weight-bold mb-0">Content_2</p>
-                      <h6 class="text-sm mb-0">
-                        {!! Str::limit($item->content_2, 50 ,'...') !!}
-
-                      </h6>
+                      <p class="text-xs font-weight-bold mb-0">Work</p>
+                      <h6 class="text-sm mb-0">{{$item->work}}</h6>
                     </div>
                   </td>
                   <td class="align-middle text-sm">
                     <div class="col text-center">
-                      <p class="text-xs font-weight-bold mb-0">Content_3</p>
-                      <h6 class="text-sm mb-0">
-                        {!! Str::limit($item->content_3, 50 ,'...') !!}
-
-                      </h6>
+                      <p class="text-xs font-weight-bold mb-0">Instagram</p>
+                      <h6 class="text-sm mb-0">{{$item->instagram}}</h6>
+                    </div>
+                  </td>
+                  <td class="align-middle text-sm">
+                    <div class="col text-center">
+                      <p class="text-xs font-weight-bold mb-0">Linkendin</p>
+                      <h6 class="text-sm mb-0">{{$item->linkedin}}</h6>
                     </div>
                   </td>
                   <td class="align-middle text-sm">
@@ -86,9 +81,7 @@
                     </div>
                   </td>
                 </tr>
-               @endforeach
-
-                
+                @endforeach
                 </tbody>
               </table>
             </div>

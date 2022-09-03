@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Sponsor;
 use Illuminate\Http\Request;
 
 class SponsorController extends Controller
@@ -14,7 +15,10 @@ class SponsorController extends Controller
      */
     public function index()
     {
-        return view('admin.page.sponsor.index');
+        $data = Sponsor::all();
+        return view('admin.page.sponsor.index', [
+            'data' => $data
+        ]);
     }
 
     /**

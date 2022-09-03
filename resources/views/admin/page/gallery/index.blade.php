@@ -32,137 +32,50 @@
               </div>
             </div>
             <div class="table-responsive">
-              <table class="table align-items-center ">
-                <tbody>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="./assets/img/icons/flags/US.png" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">United States</h6>
-                        </div>
+              <div class="d-flex flex-wrap ">
+               @foreach ($data as $item)
+               <div class="p-2 col-md-2 col-sm-4 position-relative">
+                <img class="img-fluid rounded" src="{{$item->image}}" alt="" style="width:400px; height:200px;">
+                <form method="POST" class=" position-absolute top-0 end-0">
+                  @csrf @method('DELETE')
+                  <button class="btn btn-icon btn-2 btn-danger" formaction="{{route('gallery.destroy',$item->id)}}">
+                    <span class="btn-inner--icon"><i class="fa fa-trash"></i></span>
+                  </button>
+                </form>
+              </div>
+               @endforeach
+                 
+              </div>
+            
+              <form method="POST" enctype="multipart/form-data" class="mt-4" x-data="Galery">
+                @csrf
+                <div class="row">
+                  <div class="col-lg-6 col-md-6-col-sm-12 px-3 mt-2">
+                    <div class="d-grid">
+                      <input onchange="preview()"  accept="image/*" class="form-control" type="file" id="file_input" value="Pilih Gambar" name="galeri_images[]"  multiple>
+                    </div>
+                  </div>
+            
+                  <div class="col-lg-6 col-md-6-col-sm-12 mt-2">
+                    <div class="row">
+                      <div class="d-grid col-6 sm-col-12">
+                        <button type="button" x-on:click="cancel()" class="btn btn-danger">Batalkan</button>
                       </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">2500</h6>
+                      <div class="d-grid col-6 sm-col-12">
+                        <button formaction="" class="btn btn-primary">Upload Gambar</button>
                       </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$230,900</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">29.9%</h6>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="./assets/img/icons/flags/DE.png" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Germany</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">3.900</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$440,000</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">40.22%</h6>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="./assets/img/icons/flags/GB.png" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Great Britain</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">1.400</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$190,700</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">23.44%</h6>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="./assets/img/icons/flags/BR.png" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Brasil</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">562</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$143,960</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">32.14%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <template x-for="url in urls ">
+                   <div class="col-md-2 col-sm-4 rounded p-2">
+                    <img class="img-fluid rounded" id="tes" alt="" x-bind:src="url">
+                   </div>
+                  </template>
+                </div>
+              </form>
+            
             </div>
           </div>
         </div>
@@ -186,6 +99,35 @@
             </div>
           </div>
       </footer>
+      <script>
+        function Galery(){
+          return {
+            // data 
+            urls: [],
+            //  method
+            cancel(){
+              files = document.getElementById('file_input');
+              files.value = '';
+              this.urls = [];
+            },
+            preview(){
+              // get url from id file_input
+              var Objectfiles = document.getElementById("file_input").files;
+    
+              files = Object.entries(Objectfiles)
+    
+              files.map(function(file){
+                var url = URL.createObjectURL(file[1]);
+                this.urls.push(url)
+              }.bind(this))
+              
+              console.log(typeof(files))
+              console.log(files)
+              console.log(this.urls)
+            }
+          }
+        }
+        </script>
 
     </div>
 </main>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class GalleryController extends Controller
@@ -14,7 +15,10 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('admin.page.gallery.index');
+        $data = Gallery::all();
+        return view('admin.page.gallery.index', [
+            'data' => $data
+        ]);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
@@ -14,7 +15,10 @@ class SettingController extends Controller
      */
     public function index()
     {
-        return view('admin.page.setting.index');
+        $data = Setting::all();
+        return view('admin.page.setting.form', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -24,7 +28,10 @@ class SettingController extends Controller
      */
     public function create()
     {
-        //
+        $data = Setting::all();
+        return view('admin.page.setting.form', [
+            'data' => $data
+        ]);
     }
 
     /**

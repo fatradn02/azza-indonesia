@@ -17,26 +17,30 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet"> 
         <!-- Styles -->
-      
 
         <style>
+            
             body {
                 font-family: 'Nunito', sans-serif;
             }
+            
             .bg-green{
                 background-color: #82954B;
             }
+            
             .banner-image {
                 background-image: linear-gradient(rgba(0, 0, 0, 0.226),rgba(0, 0, 0, 0.2)) , url('/img/benner/benner_7.jpg');
-                width: 100%;
+                width:100vw;
                 background-position: center;
                 background-size: cover;
                     
             }
+
             button{
                 background: none;
                 border-radius: none #000;
             }
+            
             .benner-button {
                 --c: #BABD42;
                 color: var(--c);
@@ -136,44 +140,8 @@
                 height: 100%;
                 cursor: pointer;
             }
-            .button-kontak-wrapper-md {
-                position: fixed;
-                bottom: -40%;
-                right: 10%;
-            }
-
-            .button-item-kontak-wrapper-md {
-                background-color: var(--orange);
-                border-radius: 8px;
-                color: var(--white);
-                font-weight: bold;
-                font-size: 1rem;
-                padding: 10px;
-            }
-            .wa-icon-md {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-            }
-            .pulse-md {
-                width: 70px;
-                height: 70px;
-                background-color: whitesmoke;
-                border-radius: 50%;
-                position: relative;
-                animation: animate 3s linear infinite;
-            }
-            .pulse-md i {
-                position: relative;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 30px;
-                color: #fff;
-                height: 100%;
-                cursor: pointer;
-            }
+            
+           
             @keyframes animate {
                 0% {
                     box-shadow: 0 0 0 0 rgb(186, 189, 66), 0 0 0 0 rgb(186, 189, 66);
@@ -193,205 +161,199 @@
                         0 0 0 30px rgb(255, 109, 74, 0);
                 }
             }
+
         </style>
     </head>
-    <body class="antialiased">
-
+    <body class="antialiased overflow-x-hidden" style="overflow-x: hidden;">
+      
         {{-- Navbar Desktop--}}
         <nav class="navbar navbar-expand-lg navbar-light d-none d-md-block fixed-top py-4">
             <div class="container">
-              <a class="navbar-brand fs-3 text-white" href="#" style="font-family: 'Passion One', cursive;">{{$settings->logo}}</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav gap-4 d-flex justify-content-end w-100">
-                    <li class="nav-item">
-                      <a class="nav-link text-white fw-bold fs-5" href="#about" for="about">ABOUT</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white fw-bold fs-5" href="#feature" for="feature">FEATURE</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white fw-bold fs-5" href="#product" for="product">PRODUCT</a>
-                    </li>
-                    {{-- <li class="nav-item">
-                      <a class="nav-link text-white fw-bold fs-5" href="#about" for="about">TEAM</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white fw-bold fs-5" href="#about" for="about">GALLERY</a>
-                    </li> --}}
-                    <li class="nav-item">
-                      <a class="nav-link text-white fw-bold fs-5" href="#contact" for="contact">CONTACT</a>
-                    </li>
-                  </ul>
-              </div>
+                <a class="navbar-brand fs-3 text-white" href="#" style="font-family: 'Passion One', cursive;">{{$settings->logo}}</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav gap-4 d-flex justify-content-end w-100">
+                        <li class="nav-item">
+                        <a class="nav-link text-white fw-bold fs-5" href="#about" for="about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white fw-bold fs-5" href="#feature" for="feature">FEATURE</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white fw-bold fs-5" href="#product" for="product">PRODUCT</a>
+                        </li>
+                        {{-- <li class="nav-item">
+                        <a class="nav-link text-white fw-bold fs-5" href="#about" for="about">TEAM</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white fw-bold fs-5" href="#about" for="about">GALLERY</a>
+                        </li> --}}
+                        <li class="nav-item">
+                        <a class="nav-link text-white fw-bold fs-5" href="#contact" for="contact">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
         {{-- Navbar Mobile && Ipad --}}
         <nav class="navbar navbar-expand-lg navbar-light d-block d-md-none bg-green fixed-top">
             <div class="container">
-              <a class="navbar-brand fs-3 text-white" href="#" style="font-family: 'Passion One', cursive;">AZZA INDONESIA SUPPLIER</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav gap-3 d-flex justify-content-end w-100">
-                    <li class="nav-item">
-                      <a class="nav-link text-white fw-bold fs-5" href="#about" for="about">ABOUT</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white fw-bold fs-5" href="#feature" for="feature">FEATURE</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white fw-bold fs-5" href="#product" for="product">PRODUCT</a>
-                    </li>
-                    {{-- <li class="nav-item">
-                      <a class="nav-link text-white fw-bold fs-5" href="#">TEAM</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white fw-bold fs-5" href="#">GALLERY</a>
-                    </li> --}}
-                    <li class="nav-item">
-                      <a class="nav-link text-white fw-bold fs-5" href="#contact" for="contact">CONTACT</a>
-                    </li>
-                  </ul>
-              </div>
+                <a class="navbar-brand fs-3 text-white" href="#" style="font-family: 'Passion One', cursive;">AZZA INDONESIA SUPPLIER</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav gap-3 d-flex justify-content-end w-100">
+                        <li class="nav-item">
+                        <a class="nav-link text-white fw-bold fs-5" href="#about" for="about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white fw-bold fs-5" href="#feature" for="feature">FEATURE</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white fw-bold fs-5" href="#product" for="product">PRODUCT</a>
+                        </li>
+                        {{-- <li class="nav-item">
+                        <a class="nav-link text-white fw-bold fs-5" href="#">TEAM</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-white fw-bold fs-5" href="#">GALLERY</a>
+                        </li> --}}
+                        <li class="nav-item">
+                        <a class="nav-link text-white fw-bold fs-5" href="#contact" for="contact">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
-
-         <!-- Banner Image  -->
-        <div>
-            <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+        
+        <!-- Banner Image  -->
+        <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center ">
             <div class="container" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="linear" >
-            <div class="col-md-6" >
-                <div>
-                <h4 class="text-white" >{{$settings->tagline_1}}</h4>
-                </div>
-                <div class="text-white lh-1 d-none d-md-block" style="max-width:80%; ">
-                    <h1 style="font-size:45px;">
-                        {{$settings->tagline_2}}                    
-                    </h1>
-                </div>
-                <div class="text-white lh-1 d-block d-md-none" style="max-width:100%; ">
-                    <h1 style="font-size:40px;">
-                        {{$settings->tagline_2}}
-                    </h1>
-                </div>
-
-                <div class="row mt-5">
-                <div class="container d-flex gap-5 ">
-                    <div class="col-md-2 benner-button">
-                        <a href="#about" for="about" class="text-decoration-none text-white mb-0">About Us
-                        <span></span><span></span><span></span><span></span>
-                        </a>
+                <div class="col-md-6">
+                    <div>
+                        <h4 class="text-white" >{{$settings->tagline_1}}</h4>
                     </div>
-                    <div class="col-md-1 benner-button">
-                        <a href="#product" for="product"  class="text-decoration-none text-white mb-0">Products Us
-                        <span></span><span></span><span></span><span></span>
-                        </a>
-                    </div>                  
+                    <div class="text-white lh-1 d-none d-md-block" style="max-width:80%; ">
+                        <h1 style="font-size:45px;">
+                            {{$settings->tagline_2}}                    
+                        </h1>
+                    </div>
+                    <div class="text-white lh-1 d-block d-md-none" style="max-width:100%; ">
+                        <h1 style="font-size:40px;">
+                            {{$settings->tagline_2}}
+                        </h1>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="container d-flex gap-5 ">
+                            <div class="col-md-2 benner-button">
+                                <a href="#about" for="about" class="text-decoration-none text-white mb-0">About Us
+                                    <span></span><span></span><span></span><span></span>
+                                </a>
+                            </div>
+                            <div class="col-md-1 benner-button">
+                                <a href="#product" for="product"  class="text-decoration-none text-white mb-0">Products Us
+                                    <span></span><span></span><span></span><span></span>
+                                </a>
+                            </div>                  
+                        </div>
+                    </div>
                 </div>
-                </div>
-            
-            </div>
-            
-            </div>
             </div>
         </div>
-
-
-         {{-- About Us --}}
-         <div id="about">
-             <section class="container" style="margin-top:150px;"  >
-                 <div class="row py-5" >
-                     <div class="col-md-6 col-12" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="linear">
-                         <div class="">
+            
+        {{-- About Us --}}
+        <div id="about">
+            <section class="container" style="margin-top:150px;" >
+                <div class="row py-5" >
+                    <div class="col-md-6 col-12" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="linear">
+                        <div class="">
                             <h1 class="fw-bold" style="font-size:32px;">{{$about->title}}</h1>
-                         </div>
-                         <div class="w-100 lh-base mt-3 d-block d-md-none" style="font-size:19px;">
-                             {{$about->content_1}}
-                         </div>
-                         <div class="w-75 lh-base mt-3 d-none d-md-block" style="font-size:19px;">
-                             {{$about->content_1}}
-                         </div>
-                         <div class="w-100 lh-base mt-3 d-block d-md-none" style="font-size:16px;">
-                             {{$about->content_2}}
-                         </div>
-                         <div class="w-75 lh-base mt-3 d-none d-md-block" style="font-size:16px;">
-                             {{$about->content_2}}
-                         </div>
-                         <div class="w-100 lh-base mt-3 d-block d-md-none" style="font-size:16px;">
-                             {{$about->content_3}}
-                         </div>
-                         <div class="w-75 lh-base mt-3 d-none d-md-block" style="font-size:16px;">
-                             {{$about->content_3}}
-                         </div>
-                     </div>
-                     <div class="col-md-6 col-12" data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear">
-                         <div class=" d-flex justify-content-center">
-                             <img src="/img/products/products_7.jpg" alt="" class="shadow mb-5 img-fluid d-block d-md-none mt-5 mt-md-0" style="width:100%; height:90%; border-radius:25px; ">
-                             <img src="/img/products/products_7.jpg" alt="" class="shadow mb-5 img-fluid d-none d-md-block" style="width:55%; height:90%; border-radius:25px; ">
-                         </div>
-             
-                     </div>
-                 </div>
-             </section>
-         </div>
+                        </div>
+                        <div class="w-100 lh-base mt-3 d-block d-md-none" style="font-size:19px;">
+                            {{$about->content_1}}
+                        </div>
+                        <div class="w-75 lh-base mt-3 d-none d-md-block" style="font-size:19px;">
+                            {{$about->content_1}}
+                        </div>
+                        <div class="w-100 lh-base mt-3 d-block d-md-none" style="font-size:16px;">
+                            {{$about->content_2}}
+                        </div>
+                        <div class="w-75 lh-base mt-3 d-none d-md-block" style="font-size:16px;">
+                            {{$about->content_2}}
+                        </div>
+                        <div class="w-100 lh-base mt-3 d-block d-md-none" style="font-size:16px;">
+                            {{$about->content_3}}
+                        </div>
+                        <div class="w-75 lh-base mt-3 d-none d-md-block" style="font-size:16px;">
+                            {{$about->content_3}}
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12" data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear">
+                        <div class=" d-flex justify-content-center">
+                            <img src="/img/products/products_7.jpg" alt="" class="shadow mb-5 img-fluid d-block d-md-none mt-5 mt-md-0" style="width:100%; height:90%; border-radius:25px; ">
+                            <img src="/img/products/products_7.jpg" alt="" class="shadow mb-5 img-fluid d-none d-md-block" style="width:55%; height:90%; border-radius:25px; ">
+                        </div>
+            
+                    </div>
+                </div>
+            </section>
+        </div>
 
-         {{-- Our Key Features --}}
-         <div id="feature">
-
-             <section class="container" style="margin-top:150px;" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="linear">
-                 <h1 class="text-center fw-bold" style="font-size:32px;">Our Key Feature</h1>
-                 <div class="row g-5 my-5">
-                     @foreach ($features as $feature)
-                     <div class="col-md-6">
-                         <div class="d-flex justify-content-center flex-column align-items-center">
-                             @if ($feature->title == 'Integrity')
-                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#82954B" class="bi bi-heart-pulse" viewBox="0 0 16 16">
-                             <path fill-rule="evenodd" d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01L8 2.748ZM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5Zm8.252-6.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162l-1.874-4.686Z"/>
-                             </svg>      
-                             @endif
-                             @if ($feature->title == 'Commitment')
-                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#82954B" class="bi bi-shield-check" viewBox="0 0 16 16">
-                                 <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
-                                 <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                             </svg>       
-                             @endif
-                             @if ($feature->title == 'Quality')
-                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#82954B" class="bi bi-award" viewBox="0 0 16 16">
-                                 <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
-                                 <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
-                             </svg>    
-                             @endif
-                             @if ($feature->title == 'Innovation')
-                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#82954B" class="bi bi-lightbulb" viewBox="0 0 16 16">
-                                 <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
-                             </svg>     
-                             @endif
-     
-                             <h5 class="text-center mt-3 fw-bold" style="color:#82954B; font-size:20px;">{{$feature->title}}</h5>
-                             <div class="text-center lh-md mt-2 w-75 fw-light">
-                                 {{$feature->content}}
-                             </div>
-                         </div>
-                         
-                     </div>
-                     @endforeach
-                 </div>
-             </section>
-         </div>
+        {{-- Our Key Features --}}
+        <div id="feature">
+            <section class="container" style="margin-top:150px;" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="linear">
+                <h1 class="text-center fw-bold" style="font-size:32px;">Our Key Feature</h1>
+                <div class="row g-5 my-5">
+                    @foreach ($features as $feature)
+                    <div class="col-md-6">
+                        <div class="d-flex justify-content-center flex-column align-items-center">
+                            @if ($feature->title == 'Integrity')
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#82954B" class="bi bi-heart-pulse" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01L8 2.748ZM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5Zm8.252-6.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162l-1.874-4.686Z"/>
+                            </svg>      
+                            @endif
+                            @if ($feature->title == 'Commitment')
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#82954B" class="bi bi-shield-check" viewBox="0 0 16 16">
+                                <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
+                                <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                            </svg>       
+                            @endif
+                            @if ($feature->title == 'Quality')
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#82954B" class="bi bi-award" viewBox="0 0 16 16">
+                                <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z"/>
+                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                            </svg>    
+                            @endif
+                            @if ($feature->title == 'Innovation')
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#82954B" class="bi bi-lightbulb" viewBox="0 0 16 16">
+                                <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+                            </svg>     
+                            @endif
+    
+                            <h5 class="text-center mt-3 fw-bold" style="color:#82954B; font-size:20px;">{{$feature->title}}</h5>
+                            <div class="text-center lh-md mt-2 w-75 fw-light">
+                                {{$feature->content}}
+                            </div>
+                        </div>
+                        
+                    </div>
+                    @endforeach
+                </div>
+            </section>
+        </div>
 
         {{-- Our Product --}}
         <div id="product">
-
             <section class="container-fluid  py-5" style="margin-top:150px;">
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         @foreach ($products as $key => $product)
-                        <div class="carousel-item {{$key == 0 ? 'active' : ''}}" data-bs-interval="10000">
+                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="10000">
                             <div class="container ">
                                 <div class="row d-flex align-items-start">
                                     <div class="col-md-6">
@@ -474,15 +436,7 @@
                 </a>
             </div>
         </div>
-        <div class="button-kontak-wrapper-md d-block d-md-none">
-            <div class="button-item-kontak-wrapper-md wa-icon">
-                <a href="https://wa.link/jqwsm0" class="pulse-md">
-                <img src="/img/wa.png" alt="" style="width:70px;">
-                </a>
-            </div>
-        </div>
 
-      
         {{-- Footer --}}
         <section id="contact">
             <footer class="p-5" style="background-color:rgba(130, 149, 75, 1);">
@@ -586,24 +540,20 @@
        
          <!-- Copyright -->
         <div
-        class="text-start p-4  container-fluid"
-        style="background-color:rgba(130, 149, 75, 1);"
-        >
-        <hr class="container-fluid" style="background-color:#fff; height:3px;">
-        <div class="container" >  
-            <div class="text-white">
-                © 2022 Copyright:
-                <a class="text-white text-decoration-none " href="https://mdbootstrap.com/"
-                >Azza Coco</a
-                >
-            </div>
+            class="text-start p-4  container-fluid"
+            style="background-color:rgba(130, 149, 75, 1);"
+            >
+            <hr class="container-fluid" style="background-color:#fff; height:3px;">
+            <div class="container-fluid" >  
+                <div class="text-white ms-4">
+                    © 2022 Copyright:
+                    <a class="text-white text-decoration-none " href="https://mdbootstrap.com/"
+                    >AZZA INDONESIA SUPPLIER</a
+                    >
+                </div>
             </div>
         </div>
 
-      
-    
-        
-        
         <script type="text/javascript">
             var nav = document.querySelector('nav');
       

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Feature;
 use Illuminate\Http\Request;
 
 class FeatureController extends Controller
@@ -14,7 +15,10 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        return view('admin.page.feature.index');
+        $data  = Feature::all();
+        return view('admin.page.feature.index', [
+            'data' => $data
+        ]);
     }
 
     /**
